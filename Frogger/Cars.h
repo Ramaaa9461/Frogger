@@ -13,7 +13,7 @@ private:
 
 public: 
 	
-	Cars(const char* imagePath, int raw, int direction);
+	Cars(const char* imagePath, int raw, int direction, float speed);
 	~Cars();
 
 	void move();
