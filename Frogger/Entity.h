@@ -1,6 +1,7 @@
 #pragma once
 
 #include "raylib.h"
+#include "Player.h"
 
 class Entity
 {
@@ -16,6 +17,7 @@ public:
 
 	virtual ~Entity();
 	virtual void draw() = 0;
-	virtual Rectangle getBoxCollider();
+	virtual void checkCollision(Player* player) = 0;
+	Rectangle getBoxCollider();
 };
 

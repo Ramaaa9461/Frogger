@@ -1,11 +1,16 @@
 #pragma once
 
-#include "Entity.h"
+#include "raylib.h"
 
-class Player : public Entity
+class Player 
 {
 private:
 
+
+	float speed = 1;
+	Vector2 position;
+	Rectangle boxCollider;
+	Texture2D texture;
 	int lifes = 5;
 
 public:
@@ -18,15 +23,14 @@ public:
 	void moveRight();
 	void moveLeft();
 
-	bool checkCollisionWithPlayer(Rectangle obstacle);
 	void goToInitialPosition();
 	void substractLife();
 
 
 	int getLife();
 
-	void draw() override;
-	//Rectangle getBoxCollider()override;
+	void draw();
+	Rectangle getBoxCollider();
 
 };
 

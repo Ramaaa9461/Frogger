@@ -44,6 +44,17 @@ void Cars::move()
 	boxCollider.x = position.x;
 }
 
+void Cars::checkCollision(Player* player)
+{
+	if (CheckCollisionRecs(boxCollider, player->getBoxCollider()))
+	{
+		goToInitialPosition();
+		player->goToInitialPosition();
+		player->substractLife();
+	}
+
+}
+
 void Cars::draw()
 {
 	DrawRectangleRec(boxCollider, YELLOW);

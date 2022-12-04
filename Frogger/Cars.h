@@ -17,7 +17,7 @@ public:
 	~Cars();
 
 	void move();
-
+	void checkCollision(Player* player) override;
 	void draw() override;
 };
 

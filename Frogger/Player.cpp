@@ -51,11 +51,6 @@ void Player::moveLeft()
 	boxCollider.x = position.x;
 }
 
-bool Player::checkCollisionWithPlayer(Rectangle obstacle)
-{
-	return CheckCollisionRecs(boxCollider, obstacle);
-}
-
 void Player::substractLife()
 {
 	if (lifes > 0)
@@ -75,7 +70,7 @@ int Player::getLife()
 	return lifes;
 }
 
-//Rectangle Player::getBoxCollider()
-//{
-//	return Rectangle();
-//}
+Rectangle Player::getBoxCollider()
+{
+	return boxCollider;
+}
