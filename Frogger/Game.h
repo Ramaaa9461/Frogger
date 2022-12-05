@@ -1,16 +1,21 @@
 #pragma once
 
 #include "raylib.h"
+
+#include <vector>
+
 #include "Entity.h"
 #include "Player.h"
 #include "Cars.h"
+#include "Trunks.h"
 
 class Game
 {
 private:
 
 	Player* player;
-	Entity* car[5];
+	const int size = 10;
+	Entity* obstacles[5];
 
 	void Input();
 

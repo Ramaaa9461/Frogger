@@ -7,16 +7,14 @@ class Cars : public Entity
 
 private:
 
-	int direction;
-
-	void goToInitialPosition();
+	void goToInitialPosition() override;
 
 public: 
 	
 	Cars(const char* imagePath, int raw, int direction, float speed);
 	~Cars();
 
-	void move();
+	void move() override;
 	void checkCollision(Player* player) override;
 	void draw() override;
 };

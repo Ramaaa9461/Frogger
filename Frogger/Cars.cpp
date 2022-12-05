@@ -2,21 +2,22 @@
 
 
 
-Cars::Cars(const char* imagePath, int raw, int direction, float speed)
+void Cars::goToInitialPosition()
 {
-	texture = LoadTexture(imagePath);
-	position.y = ((GetScreenHeight() / 15) * raw); 
-	this->direction = direction;
-	this->speed = speed;
+	if (direction == 0)
+	{
+		position.x = 0 - texture.width;
+	}
+	else
+	{
+		position.x = GetScreenWidth() + texture.width;
+	}
+}
 
-	position.y += texture.height * 1.5f;
+Cars::Cars(const char* imagePath, int raw, int direction, float speed) :
+	Entity(imagePath, raw, direction, speed)
+{
 	goToInitialPosition();
-
-	boxCollider.width = texture.width;
-	boxCollider.height = texture.height;
-	boxCollider.x = position.x;
-	boxCollider.y = position.y;
-
 }
 
 Cars::~Cars()
@@ -61,14 +62,3 @@ void Cars::draw()
 	DrawTexture(texture, position.x, position.y, WHITE);
 }
 
-void Cars::goToInitialPosition()
-{
-	if (direction == 0)
-	{
-		position.x = 0 - texture.width;
-	}
-	else
-	{
-		position.x = GetScreenWidth() + texture.width;
-	}
-}

@@ -23,6 +23,8 @@ public:
 	void moveRight();
 	void moveLeft();
 
+	void addSpeed(int speed);
+
 	void goToInitialPosition();
 	void substractLife();
 

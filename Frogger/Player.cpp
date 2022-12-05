@@ -19,6 +19,9 @@ void Player::goToInitialPosition()
 {
 	position.x = GetScreenWidth() / 2;
 	position.y = GetScreenHeight() - texture.height;
+
+	boxCollider.x = position.x;
+	boxCollider.y = position.y;
 }
 
 Player::~Player()
@@ -51,6 +54,12 @@ void Player::moveLeft()
 	boxCollider.x = position.x;
 }
 
+void Player::addSpeed(int speed)
+{
+	position.x += speed;
+	boxCollider.x = position.x;
+}
+
 void Player::substractLife()
 {
 	if (lifes > 0)
@@ -61,7 +70,7 @@ void Player::substractLife()
 
 void Player::draw()
 {
-//	DrawRectangleRec(boxCollider, RED);
+	DrawRectangleRec(boxCollider, RED);
 	DrawTexture(texture, position.x, position.y, WHITE);
 }
 

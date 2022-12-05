@@ -171,6 +171,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Rules.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Trunks.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cars.h" />
@@ -184,6 +185,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Rules.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Trunks.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
