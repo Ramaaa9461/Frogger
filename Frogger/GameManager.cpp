@@ -26,7 +26,7 @@ GameManager::~GameManager()
 
 void GameManager::run()
 {
-	InitWindow(1280, 720, "Frogger");
+	InitWindow(800, 720, "Frogger");
 	SetTargetFPS(60);
 
 	init();

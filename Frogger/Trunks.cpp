@@ -2,10 +2,11 @@
 
 
 
-Trunks::Trunks(const char* imagePath, int raw, int direction, float speed) :
+Trunks::Trunks(const char* imagePath, int raw, int direction, float speed, int positionX) :
 	Entity(imagePath, raw, direction, speed)
 {
-	goToInitialPosition();
+	//goToInitialPosition();
+	position.x = positionX;
 }
 
 Trunks::~Trunks()
@@ -24,16 +25,6 @@ void Trunks::goToInitialPosition()
 	{
 		position.x = GetScreenWidth() + texture.width;
 	}
-
-	waterLeft.x = position.x - GetScreenWidth();
-	waterLeft.y = position.y ;
-	waterLeft.height = boxCollider.height;
-	waterLeft.width = GetScreenWidth();
-
-	waterRight.x = position.x + boxCollider.width;
-	waterRight.y = position.y ;
-	waterRight.height = boxCollider.height;
-	waterRight.width = GetScreenWidth();
 }
 
 void Trunks::move()
@@ -54,32 +45,25 @@ void Trunks::move()
 	}
 
 	boxCollider.x = position.x;
-
-	waterLeft.x = position.x - GetScreenWidth();
-	waterRight.x = position.x + boxCollider.width;
 }
 
 void Trunks::checkCollision(Player* player)
 {
 	if (CheckCollisionRecs(boxCollider, player->getBoxCollider()))
 	{
-		//Agregarle la velocidad al player para que se "Suba" al tronco
-		player->addSpeed(speed);
+		if (direction == 0)
+		{
+			player->addSpeed(speed);
+		}
+		else
+		{
+			player->addSpeed(-speed);
+		}
 	}
-	else if (CheckCollisionRecs(waterLeft, player->getBoxCollider()) || 
-			 CheckCollisionRecs(waterRight, player->getBoxCollider()))
-	{
-		goToInitialPosition();
-		player->goToInitialPosition();
-		player->substractLife();
-	}
-
-
 }
 
 void Trunks::draw()
 {
-	DrawRectangleRec(waterLeft, SKYBLUE);
-	DrawRectangleRec(waterRight, SKYBLUE);
+	DrawRectangleRec(boxCollider, RED);
 	DrawTexture(texture, position.x, position.y, WHITE);
 }

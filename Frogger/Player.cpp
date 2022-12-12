@@ -32,26 +32,38 @@ Player::~Player()
 
 void Player::moveUp()
 {
-	position.y -= speed;
-	boxCollider.y = position.y;
+	if (position.y - speed > 0)
+	{
+		position.y -= speed;
+		boxCollider.y = position.y;
+	}
 }
 
 void Player::moveDown()
 {
-	position.y += speed;
-	boxCollider.y = position.y;
+	if (position.y + speed < GetScreenHeight())
+	{
+		position.y += speed;
+		boxCollider.y = position.y;
+	}
 }
 
 void Player::moveRight()
 {
-	position.x += speed;
-	boxCollider.x = position.x;
+	if (position.x + speed < GetScreenWidth())
+	{
+		position.x += speed;
+		boxCollider.x = position.x;
+	}
 }
 
 void Player::moveLeft()
 {
-	position.x -= speed;
-	boxCollider.x = position.x;
+	if (position.x - speed > 0)
+	{
+		position.x -= speed;
+		boxCollider.x = position.x;
+	}
 }
 
 void Player::addSpeed(int speed)

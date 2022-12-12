@@ -14,10 +14,13 @@ class Game
 private:
 
 	Player* player;
-	const int size = 10;
-	Entity* obstacles[5];
+	const int size = 20;
+	Entity* obstacles[20];
 
+	std::vector<Rectangle> water_vector;
+	int trunksPerRow = 3;
 	void Input();
+	void createTrunks(int initalIndex);
 
 public:
 
