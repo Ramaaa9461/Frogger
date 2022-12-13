@@ -11,17 +11,22 @@ Game::~Game()
 
 	UnloadTexture(background);
 	UnloadFont(font);
+	UnloadMusicStream(gameplayMusic);
 	delete player;
 	delete[] obstacles;
 }
 
 void Game::initGame()
 {
+
 	background = LoadTexture("res/Images/gameplayBackground.png");
 	victoryFrogTexture = LoadTexture("res/Images/CollectedFrog.png");
 	font = LoadFont("res/Fonts/JungleAdventurer.ttf");
+	gameplayMusic = LoadMusicStream("res/Music/gameplayMusic.wav");
+	PlayMusicStream(gameplayMusic);
 
 	player = new Player();
+	
 
 	createVictoriesZones();
 	createCars();
@@ -31,6 +36,7 @@ void Game::initGame()
 void Game::updateGame()
 {
 	Input();
+	UpdateMusicStream(gameplayMusic);
 
 	for (int i = 0; i < size; i++)
 	{

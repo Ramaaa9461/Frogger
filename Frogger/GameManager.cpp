@@ -28,8 +28,11 @@ void GameManager::run()
 {
 	InitWindow(800, 720, "Frogger");
 	SetTargetFPS(60);
+	InitAudioDevice();
 
 	init();
+
+
 
 	while (!WindowShouldClose())
 	{
@@ -76,7 +79,7 @@ void GameManager::run()
 	}
 	CloseWindow();
 
-
+	CloseAudioDevice();
 }
 
 

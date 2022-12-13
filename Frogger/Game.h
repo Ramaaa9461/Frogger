@@ -25,6 +25,7 @@ private:
 	
 	Texture background;
 	Texture victoryFrogTexture;
+	Music gameplayMusic;
 	Font font;
 
 	void Input();
