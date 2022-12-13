@@ -14,8 +14,8 @@ class Game
 private:
 
 	Player* player;
-	const int size = 20;
-	Entity* obstacles[20];
+	static const int size = 20;
+	Entity* obstacles[size];
 
 	std::vector<Rectangle> water_vector;
 	int trunksPerRow = 3;

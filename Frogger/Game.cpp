@@ -9,7 +9,7 @@ Game::Game() {}
 Game::~Game()
 {
 	delete player;
-	delete obstacles;
+	delete[] obstacles;
 }
 
 void Game::initGame()
@@ -24,18 +24,23 @@ void Game::initGame()
 	obstacles[4] = new Cars("res/Images/blueCar.png", 9, 0, 15);
 
 	createTrunks(4);
-
 }
 
 void Game::updateGame()
 {
 	Input();
 
-	if (CheckCollisionRecs(player->getBoxCollider(), water))
-	{
-		player->substractLife();
-		player->goToInitialPosition();
+	for (int i = 0; i < water_vector.size(); i++)
+	{	
+		water_vector[i].x = obstacles[i + 5]->getBoxCollider().x;
+
+		if (CheckCollisionRecs(player->getBoxCollider(), water_vector[i]))
+		{
+			player->substractLife();
+			player->goToInitialPosition();
+		}
 	}
+
 
 	for (int i = 0; i < size; i++)
 	{
@@ -48,7 +53,11 @@ void Game::updateGame()
 
 void Game::drawGame()
 {
-	DrawRectangleRec(water, SKYBLUE);
+
+	for (int i = 0; i < water_vector.size(); i++)
+	{
+		DrawRectangleRec(water_vector[i], SKYBLUE);
+	}
 	for (int i = 0; i < size; i++)
 	{
 		obstacles[i]->draw();
@@ -84,10 +93,11 @@ void Game::Input()
 void Game::createTrunks(int initalIndex)
 {
 	int index = initalIndex;
+
 	for (int i = 0; i < trunksPerRow; i++)
 	{
 		index++;
-		obstacles[index] = new Trunks("res/Images/trunk.png", 6, 1, 10, (GetScreenWidth() / 3) * i);
+		obstacles[index] = new Trunks("res/Images/trunk.png", 6, 1, 10, (GetScreenWidth() / 3) * i );
 	}
 
 	for (int i = 0; i < trunksPerRow; i++)
@@ -113,4 +123,82 @@ void Game::createTrunks(int initalIndex)
 		index++;
 		obstacles[index] = new Trunks("res/Images/trunk.png", 2, 1, 11, (GetScreenWidth() / 3) * i);
 	}
+
+
+	//index = initalIndex;
+
+	//for (int i = 0; i < trunksPerRow; i++)
+	//{
+	//	index++;
+	//	Rectangle waterRigth;
+	//	Rectangle trunk = obstacles[index]->getBoxCollider();
+
+	//	waterRigth.x = trunk.x + trunk.width;
+	//	waterRigth.y = trunk.y;
+	//	waterRigth.height = trunk.height;
+
+	//	if (i < 2)
+	//	{
+	//	waterRigth.width = obstacles[index + 1]->getBoxCollider().x - trunk.x;
+	//	}
+	//	else
+	//	{
+	//		waterRigth.width = 266;
+	//	}
+	//	
+	//	
+	//	water_vector.push_back(waterRigth);
+	//}
+
+	/*for (int i = 0; i < trunksPerRow; i++)
+	{
+		Rectangle waterRigth;
+		index++;
+
+		waterRigth.x = obstacles[index]->getBoxCollider().x + obstacles[index]->getBoxCollider().width;
+		waterRigth.y = obstacles[index]->getBoxCollider().y;
+		waterRigth.height = obstacles[index]->getBoxCollider().height;
+		waterRigth.width = obstacles[index + 1]->getBoxCollider().x - obstacles[index]->getBoxCollider().x;
+
+		water_vector.push_back(waterRigth);
+	}
+
+	for (int i = 0; i < trunksPerRow; i++)
+	{
+		Rectangle waterRigth;
+		index++;
+
+		waterRigth.x = obstacles[index]->getBoxCollider().x + obstacles[index]->getBoxCollider().width;
+		waterRigth.y = obstacles[index]->getBoxCollider().y;
+		waterRigth.height = obstacles[index]->getBoxCollider().height;
+		waterRigth.width = obstacles[index + 1]->getBoxCollider().x - obstacles[index]->getBoxCollider().x;
+
+		water_vector.push_back(waterRigth);
+	}
+
+	for (int i = 0; i < trunksPerRow; i++)
+	{
+		Rectangle waterRigth;
+		index++;
+
+		waterRigth.x = obstacles[index]->getBoxCollider().x + obstacles[index]->getBoxCollider().width;
+		waterRigth.y = obstacles[index]->getBoxCollider().y;
+		waterRigth.height = obstacles[index]->getBoxCollider().height;
+		waterRigth.width = obstacles[index + 1]->getBoxCollider().x - obstacles[index]->getBoxCollider().x;
+
+		water_vector.push_back(waterRigth);
+	}
+
+	for (int i = 0; i < trunksPerRow; i++)
+	{
+		Rectangle waterRigth;
+		index++;
+
+		waterRigth.x = obstacles[index]->getBoxCollider().x + obstacles[index]->getBoxCollider().width;
+		waterRigth.y = obstacles[index]->getBoxCollider().y;
+		waterRigth.height = obstacles[index]->getBoxCollider().height;
+		waterRigth.width = obstacles[index + 1]->getBoxCollider().x - obstacles[index]->getBoxCollider().x;
+
+		water_vector.push_back(waterRigth);
+	}*/
 }

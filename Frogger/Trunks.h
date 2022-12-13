@@ -7,6 +7,8 @@ class Trunks : public Entity
 
 private:
 
+	Rectangle waterRigth;
+	Rectangle waterLeft;
 	void goToInitialPosition() override;
 
 public:
