@@ -82,7 +82,7 @@ void Player::substractLife()
 
 void Player::draw()
 {
-	DrawRectangleRec(boxCollider, RED);
+	//DrawRectangleRec(boxCollider, RED);
 	DrawTexture(texture, position.x, position.y, WHITE);
 }
 

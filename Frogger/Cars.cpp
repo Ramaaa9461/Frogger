@@ -58,7 +58,7 @@ void Cars::checkCollision(Player* player)
 
 void Cars::draw()
 {
-	DrawRectangleRec(boxCollider, YELLOW);
+	//DrawRectangleRec(boxCollider, YELLOW);
 	DrawTexture(texture, position.x, position.y, WHITE);
 }
 

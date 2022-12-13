@@ -82,8 +82,8 @@ void Trunks::checkCollision(Player* player)
 
 void Trunks::draw()
 {
-	DrawRectangleRec(waterRigth, SKYBLUE);
-	DrawRectangleRec(waterLeft, SKYBLUE);
-	DrawRectangleRec(boxCollider, RED);
+	//DrawRectangleRec(waterRigth, SKYBLUE);
+	//DrawRectangleRec(waterLeft, SKYBLUE);
+	//DrawRectangleRec(boxCollider, RED);
 	DrawTexture(texture, position.x, position.y, WHITE);
 }

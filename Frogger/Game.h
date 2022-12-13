@@ -16,8 +16,8 @@ private:
 	Player* player;
 	static const int size = 20;
 	Entity* obstacles[size];
+	Texture background;
 
-	std::vector<Rectangle> water_vector;
 	int trunksPerRow = 3;
 	void Input();
 	void createTrunks(int initalIndex);
