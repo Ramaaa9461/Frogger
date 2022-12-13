@@ -5,11 +5,15 @@ enum class Scene { MENU = 1, GAME, RULES, CREDITS, EXIT, ENDGAME };
 class SceneManager
 {
 private:
-	Scene scene;
+
+	SceneManager();
+	Scene scene = Scene::GAME;
+	static SceneManager* sceneManager;
 
 public:
-	SceneManager();
 	~SceneManager();
+
+	static SceneManager* getSceneManager();
 
 	Scene getCurrentScene();
 

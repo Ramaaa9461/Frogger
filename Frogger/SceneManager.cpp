@@ -1,13 +1,23 @@
 #include "SceneManager.h"
 
+SceneManager* SceneManager::sceneManager = nullptr;
+
 SceneManager::SceneManager()
 {
-	scene = Scene::GAME;
 }
 
 SceneManager::~SceneManager()
 {
 
+}
+
+SceneManager* SceneManager::getSceneManager()
+{
+	if (sceneManager == nullptr) {
+		sceneManager = new SceneManager();
+	}
+
+	return sceneManager;
 }
 
 Scene SceneManager::getCurrentScene()
