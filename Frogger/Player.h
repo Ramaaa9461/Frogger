@@ -12,6 +12,7 @@ private:
 	Rectangle boxCollider;
 	Texture2D texture;
 	int lifes = 5;
+	int frogPlaced = 0;
 
 public:
 
@@ -30,6 +31,8 @@ public:
 
 
 	int getLife();
+	int getFrogPlaced();
+	void addFrogPlaced();
 
 	void draw();
 	Rectangle getBoxCollider();

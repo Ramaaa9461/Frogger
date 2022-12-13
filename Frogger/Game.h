@@ -13,14 +13,24 @@ class Game
 {
 private:
 
-	Player* player;
 	static const int size = 20;
-	Entity* obstacles[size];
-	Texture background;
-
+	static const int victoryZonesCount = 5;
 	int trunksPerRow = 3;
+
+	Player* player;
+	Entity* obstacles[size];
+
+	Rectangle victoryZones[victoryZonesCount];
+	Rectangle killZone;
+	
+	Texture background;
+	Texture victoryFrogTexture;
+	Font font;
+
 	void Input();
 	void createTrunks(int initalIndex);
+	void createCars();
+	void drawTexts();
 
 public:
 

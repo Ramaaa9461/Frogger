@@ -91,6 +91,16 @@ int Player::getLife()
 	return lifes;
 }
 
+int Player::getFrogPlaced()
+{
+	return frogPlaced;
+}
+
+void Player::addFrogPlaced()
+{
+	frogPlaced++;
+}
+
 Rectangle Player::getBoxCollider()
 {
 	return boxCollider;
