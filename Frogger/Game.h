@@ -2,8 +2,6 @@
 
 #include "raylib.h"
 
-#include <vector>
-
 #include "Entity.h"
 #include "Player.h"
 #include "Cars.h"
@@ -16,11 +14,13 @@ private:
 	static const int size = 20;
 	static const int victoryZonesCount = 5;
 	int trunksPerRow = 3;
+	int UnlockedVictoriesZonesCount;
 
 	Player* player;
 	Entity* obstacles[size];
 
 	Rectangle victoryZones[victoryZonesCount];
+	bool unlockedVictoriesZones[victoryZonesCount];
 	Rectangle killZone;
 	
 	Texture background;
@@ -28,6 +28,7 @@ private:
 	Font font;
 
 	void Input();
+	void createVictoriesZones();
 	void createTrunks(int initalIndex);
 	void createCars();
 	void drawTexts();

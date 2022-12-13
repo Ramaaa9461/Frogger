@@ -2,7 +2,7 @@
 
 GameManager::GameManager()
 {
-	sceneManager = new SceneManager();
+	sceneManager = SceneManager::getSceneManager();
 
 	menu = new Menu();
 	rules = new Rules();
