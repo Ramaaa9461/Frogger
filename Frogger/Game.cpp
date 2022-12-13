@@ -1,6 +1,6 @@
 #include "Game.h"
 
-
+#include "SceneManager.h"
 
 #include <iostream>
 
@@ -44,6 +44,7 @@ void Game::updateGame()
 		player->goToInitialPosition();
 	}
 
+			UnlockedVictoriesZonesCount = 0;
 	for (int i = 0; i < victoryZonesCount; i++)
 	{
 		if (CheckCollisionRecs(victoryZones[i], player->getBoxCollider()))
@@ -67,16 +68,16 @@ void Game::updateGame()
 
 			if (UnlockedVictoriesZonesCount == victoryZonesCount)
 			{
-				//Cambiar a la pantalla de game over
-				std::cout << "cambio de pantalla";
-				
+				SceneManager::getSceneManager()->setCurrentScene(Scene::ENDGAME);
 			}
 
 		}
-
 	}
-			UnlockedVictoriesZonesCount = 0;
 
+	if (player->getLife() <= 0)
+	{
+		SceneManager::getSceneManager()->setCurrentScene(Scene::ENDGAME);
+	}
 }
 
 void Game::drawGame()
