@@ -87,4 +87,6 @@ void GameManager::run()
 void GameManager::init()
 {
 	game->initGame();
+	endGame->initEndGame();
+	//pause->initPause();
 }
