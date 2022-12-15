@@ -17,7 +17,7 @@ protected:
 
 public:
 
-	Entity(const char* imagePath, int raw, int direction, float speed);
+	Entity(Texture _texture, int raw, int direction, float speed);
 	virtual ~Entity();
 	
 	

@@ -2,8 +2,8 @@
 
 
 
-Trunks::Trunks(const char* imagePath, int raw, int direction, float speed, int positionX) :
-	Entity(imagePath, raw, direction, speed)
+Trunks::Trunks(Texture _texture, int raw, int direction, float speed, int positionX) :
+	Entity(_texture, raw, direction, speed)
 {
 	//goToInitialPosition();
 	position.x = positionX;
@@ -22,7 +22,6 @@ Trunks::Trunks(const char* imagePath, int raw, int direction, float speed, int p
 
 Trunks::~Trunks()
 {
-	UnloadTexture(texture);
 }
 
 

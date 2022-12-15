@@ -1,12 +1,12 @@
 #include "Player.h"
 
-
+#include "AssetsImporter.h"
 
 Player::Player()
 {
-	texture = LoadTexture("res/Images/frog.png");
+	texture = AssetsImporter::getAssetsImporter()->getFrog();
 	speed = GetScreenHeight() / 15; //Remplazar por la cantidad de columnas
-	jump = LoadSound("res/Sfx/jump.ogg");
+	jump = AssetsImporter::getAssetsImporter()->getJumpSound();
 	SetSoundVolume(jump, 0.5f);
 
 	goToInitialPosition();
@@ -28,8 +28,6 @@ void Player::goToInitialPosition()
 
 Player::~Player()
 {
-	UnloadTexture(texture);
-	UnloadSound(jump);
 }
 
 

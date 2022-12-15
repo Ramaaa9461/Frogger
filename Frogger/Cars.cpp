@@ -14,15 +14,14 @@ void Cars::goToInitialPosition()
 	}
 }
 
-Cars::Cars(const char* imagePath, int raw, int direction, float speed) :
-	Entity(imagePath, raw, direction, speed)
+Cars::Cars(Texture _texture, int raw, int direction, float speed) :
+	Entity(_texture, raw, direction, speed)
 {
 	goToInitialPosition();
 }
 
 Cars::~Cars()
 {
-	UnloadTexture(texture);
 }
 
 void Cars::move()

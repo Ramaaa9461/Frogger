@@ -13,7 +13,7 @@ private:
 
 public:
 
-	Trunks(const char* imagePath, int raw, int direction, float speed, int positionX);
+	Trunks(Texture _texture, int raw, int direction, float speed, int positionX);
 	~Trunks();
 
 	void move() override;

@@ -11,7 +11,7 @@ private:
 
 public: 
 	
-	Cars(const char* imagePath, int raw, int direction, float speed);
+	Cars(Texture _texture, int raw, int direction, float speed);
 	~Cars();
 
 	void move() override;

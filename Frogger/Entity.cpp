@@ -1,9 +1,9 @@
 #include "Entity.h"
 
 
-Entity::Entity(const char* imagePath, int raw, int direction, float speed)
+Entity::Entity(Texture _texture, int raw, int direction, float speed)
 {
-	texture = LoadTexture(imagePath);
+	texture = _texture;
 	position.y = ((GetScreenHeight() / 15) * raw);
 	this->direction = direction;
 	this->speed = speed;

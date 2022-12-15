@@ -5,7 +5,6 @@ void EndGame::initEndGame()
 {
 	playerHaveWon = SceneManager::getSceneManager()->getPlayerHaveWon();
 
-	font = LoadFont()
 
 
 }

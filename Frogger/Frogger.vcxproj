@@ -159,6 +159,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AssetsImporter.cpp" />
     <ClCompile Include="Cars.cpp" />
     <ClCompile Include="Credits.cpp" />
     <ClCompile Include="Entity.cpp" />
@@ -174,6 +175,7 @@
     <ClCompile Include="Trunks.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AssetsImporter.h" />
     <ClInclude Include="Cars.h" />
     <ClInclude Include="Credits.h" />
     <ClInclude Include="Entity.h" />

@@ -8,21 +8,18 @@ Game::Game() {}
 
 Game::~Game()
 {
-
-	UnloadTexture(background);
-	UnloadFont(font);
-	UnloadMusicStream(gameplayMusic);
 	delete player;
 	delete[] obstacles;
 }
 
 void Game::initGame()
 {
+	AI = AssetsImporter::getAssetsImporter();
 
-	background = LoadTexture("res/Images/gameplayBackground.png");
-	victoryFrogTexture = LoadTexture("res/Images/CollectedFrog.png");
-	font = LoadFont("res/Fonts/JungleAdventurer.ttf");
-	gameplayMusic = LoadMusicStream("res/Music/gameplayMusic.wav");
+	background = AI->getBackgroundGameplay();				//LoadTexture("res/Images/gameplayBackground.png");
+	victoryFrogTexture = AI->getVictoryFrog();				// LoadTexture("res/Images/CollectedFrog.png");
+	font = AssetsImporter::getAssetsImporter()->getFont();
+	gameplayMusic = AI->getGameplayMusic();					//LoadMusicStream("res/Music/gameplayMusic.wav");
 	PlayMusicStream(gameplayMusic);
 
 	player = new Player();
@@ -170,43 +167,44 @@ void Game::drawTexts()
 void Game::createTrunks(int initalIndex)
 {
 	int index = initalIndex;
+	
 
 	for (int i = 0; i < trunksPerRow; i++)
 	{
 		index++;
-		obstacles[index] = new Trunks("res/Images/trunk.png", 6, 1, 10, (GetScreenWidth() / 3) * i);
+		obstacles[index] = new Trunks(AI->getTrunk(), 6, 1, 10, (GetScreenWidth() / 3) * i);
 	}
 
 	for (int i = 0; i < trunksPerRow; i++)
 	{
 		index++;
-		obstacles[index] = new Trunks("res/Images/trunk.png", 5, 0, 8, (GetScreenWidth() / 3) * i);
+		obstacles[index] = new Trunks(AI->getTrunk(), 5, 0, 8, (GetScreenWidth() / 3) * i);
 	}
 
 	for (int i = 0; i < trunksPerRow; i++)
 	{
 		index++;
-		obstacles[index] = new Trunks("res/Images/trunk.png", 4, 1, 9, (GetScreenWidth() / 3) * i);
+		obstacles[index] = new Trunks(AI->getTrunk(), 4, 1, 9, (GetScreenWidth() / 3) * i);
 	}
 
 	for (int i = 0; i < trunksPerRow; i++)
 	{
 		index++;
-		obstacles[index] = new Trunks("res/Images/trunk.png", 3, 0, 5, (GetScreenWidth() / 3) * i);
+		obstacles[index] = new Trunks(AI->getTrunk(), 3, 0, 5, (GetScreenWidth() / 3) * i);
 	}
 
 	for (int i = 0; i < trunksPerRow; i++)
 	{
 		index++;
-		obstacles[index] = new Trunks("res/Images/trunk.png", 2, 1, 11, (GetScreenWidth() / 3) * i);
+		obstacles[index] = new Trunks(AI->getTrunk(), 2, 1, 11, (GetScreenWidth() / 3) * i);
 	}
 }
 
 void Game::createCars()
 {
-	obstacles[0] = new Cars("res/Images/blueCar.png", 13, 0, 5);
-	obstacles[1] = new Cars("res/Images/greenCar.png", 12, 1, 7);
-	obstacles[2] = new Cars("res/Images/yellowCar.png", 11, 0, 4);
-	obstacles[3] = new Cars("res/Images/truck.png", 10, 1, 10);
-	obstacles[4] = new Cars("res/Images/blueCar.png", 9, 0, 15);
+	obstacles[0] = new Cars(AI->getBlueCar(), 13, 0, 5);
+	obstacles[1] = new Cars(AI->getGreenCar(), 12, 1, 7);
+	obstacles[2] = new Cars(AI->getYellowCar(), 11, 0, 4);
+	obstacles[3] = new Cars(AI->getTruck(), 10, 1, 10);
+	obstacles[4] = new Cars(AI->getBlueCar(), 9, 0, 15);
 }

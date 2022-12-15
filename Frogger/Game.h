@@ -2,6 +2,7 @@
 
 #include "raylib.h"
 
+#include "AssetsImporter.h"
 #include "Entity.h"
 #include "Player.h"
 #include "Cars.h"
@@ -10,6 +11,8 @@
 class Game
 {
 private:
+
+	AssetsImporter* AI;
 
 	static const int size = 20;
 	static const int victoryZonesCount = 5;

@@ -14,6 +14,7 @@
 class GameManager
 {
 	SceneManager* sceneManager = nullptr;
+	AssetsImporter* assetsImporter = nullptr;
 
 	Menu* menu;
 	Rules* rules;

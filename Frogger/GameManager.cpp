@@ -1,5 +1,7 @@
 #include "GameManager.h"
 
+#include "AssetsImporter.h"
+
 GameManager::GameManager()
 {
 	sceneManager = SceneManager::getSceneManager();
@@ -10,11 +12,13 @@ GameManager::GameManager()
 	game = new Game();
 	pause = new Pause;
 	endGame = new EndGame();
+
 }
 
 GameManager::~GameManager()
 {
 	delete sceneManager;
+	delete assetsImporter;
 
 	delete menu;
 	delete rules;
@@ -32,6 +36,7 @@ void GameManager::run()
 
 	init();
 
+	assetsImporter = AssetsImporter::getAssetsImporter();
 
 
 	while (!WindowShouldClose())
@@ -77,6 +82,9 @@ void GameManager::run()
 
 		EndDrawing();
 	}
+
+	assetsImporter->deInitAssetImporter();
+
 	CloseWindow();
 
 	CloseAudioDevice();
