@@ -30,3 +30,13 @@ void SceneManager::setCurrentScene(Scene scene)
 	this->scene = scene;
 }
 
+void SceneManager::setPlayerHaveWon(bool haveWon)
+{
+	playerHaveWon = haveWon;
+}
+
+bool SceneManager::getPlayerHaveWon()
+{
+	return playerHaveWon;
+}
+

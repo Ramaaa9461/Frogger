@@ -40,8 +40,8 @@ void Game::updateGame()
 
 	for (int i = 0; i < size; i++)
 	{
-		//obstacles[i]->move();
-		//obstacles[i]->checkCollision(player);
+		obstacles[i]->move();
+		obstacles[i]->checkCollision(player);
 	}
 
 	if (CheckCollisionRecs(killZone, player->getBoxCollider()))
@@ -74,6 +74,7 @@ void Game::updateGame()
 
 			if (UnlockedVictoriesZonesCount == victoryZonesCount)
 			{
+				SceneManager::getSceneManager()->setPlayerHaveWon(true);
 				SceneManager::getSceneManager()->setCurrentScene(Scene::ENDGAME);
 			}
 
@@ -82,6 +83,7 @@ void Game::updateGame()
 
 	if (player->getLife() <= 0)
 	{
+		SceneManager::getSceneManager()->setPlayerHaveWon(false);
 		SceneManager::getSceneManager()->setCurrentScene(Scene::ENDGAME);
 	}
 }
@@ -98,7 +100,6 @@ void Game::drawGame()
 		{
 			DrawTexture(victoryFrogTexture, victoryZones[i].x, victoryZones[i].y, WHITE);
 		}
-		//DrawRectangleRec(victoryZones[i], BLUE);
 	}
 
 	for (int i = 0; i < size; i++)

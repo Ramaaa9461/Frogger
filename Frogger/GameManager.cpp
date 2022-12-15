@@ -80,6 +80,7 @@ void GameManager::run()
 	CloseWindow();
 
 	CloseAudioDevice();
+
 }
 
 

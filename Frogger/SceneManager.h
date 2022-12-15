@@ -9,6 +9,7 @@ private:
 	SceneManager();
 	Scene scene = Scene::GAME;
 	static SceneManager* sceneManager;
+	bool playerHaveWon;
 
 public:
 	~SceneManager();
@@ -18,5 +19,9 @@ public:
 	Scene getCurrentScene();
 
 	void setCurrentScene(Scene _scene);
+
+
+	 void setPlayerHaveWon(bool haveWon);
+	 bool getPlayerHaveWon();
 };
 
