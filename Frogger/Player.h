@@ -11,6 +11,7 @@ private:
 	Vector2 position;
 	Rectangle boxCollider;
 	Texture2D texture;
+	Sound jump;
 	int lifes = 5;
 	int frogPlaced = 0;
 

@@ -6,6 +6,8 @@ Player::Player()
 {
 	texture = LoadTexture("res/Images/frog.png");
 	speed = GetScreenHeight() / 15; //Remplazar por la cantidad de columnas
+	jump = LoadSound("res/Sfx/jump.ogg");
+	SetSoundVolume(jump, 0.5f);
 
 	goToInitialPosition();
 
@@ -27,6 +29,7 @@ void Player::goToInitialPosition()
 Player::~Player()
 {
 	UnloadTexture(texture);
+	UnloadSound(jump);
 }
 
 
@@ -36,6 +39,7 @@ void Player::moveUp()
 	{
 		position.y -= speed;
 		boxCollider.y = position.y;
+		PlaySound(jump);
 	}
 }
 
@@ -45,6 +49,7 @@ void Player::moveDown()
 	{
 		position.y += speed;
 		boxCollider.y = position.y;
+		PlaySound(jump);
 	}
 }
 
@@ -54,6 +59,7 @@ void Player::moveRight()
 	{
 		position.x += speed;
 		boxCollider.x = position.x;
+		PlaySound(jump);
 	}
 }
 
@@ -63,6 +69,7 @@ void Player::moveLeft()
 	{
 		position.x -= speed;
 		boxCollider.x = position.x;
+		PlaySound(jump);
 	}
 }
 
