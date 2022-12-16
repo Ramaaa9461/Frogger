@@ -13,6 +13,7 @@ private:
 	Font font;
 
 	Texture backgroundGameplay;
+	Texture basicBackground;
 
 	Texture blueCar;
 	Texture yellowCar;
@@ -39,6 +40,7 @@ public:
 	Font getFont();
 
 	Texture getBackgroundGameplay();
+	Texture getBasicBackground();
 	Texture getBlueCar();
 	Texture getYellowCar();
 	Texture getGreenCar();

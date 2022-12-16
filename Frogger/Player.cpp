@@ -26,10 +26,7 @@ void Player::goToInitialPosition()
 	boxCollider.y = position.y;
 }
 
-Player::~Player()
-{
-}
-
+Player::~Player() { }
 
 void Player::moveUp()
 {

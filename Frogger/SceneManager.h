@@ -7,7 +7,7 @@ class SceneManager
 private:
 
 	SceneManager();
-	Scene scene = Scene::GAME;
+	Scene scene = Scene::ENDGAME;
 	static SceneManager* sceneManager;
 	bool playerHaveWon;
 
@@ -23,5 +23,6 @@ public:
 
 	 void setPlayerHaveWon(bool haveWon);
 	 bool getPlayerHaveWon();
+
 };
 

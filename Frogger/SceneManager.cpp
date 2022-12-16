@@ -40,3 +40,5 @@ bool SceneManager::getPlayerHaveWon()
 	return playerHaveWon;
 }
 
+
+

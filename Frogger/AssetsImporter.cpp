@@ -26,6 +26,7 @@ void AssetsImporter::initAssetsImporter()
 	font = LoadFont("res/Fonts/JungleAdventurer.ttf");
 
 	backgroundGameplay = LoadTexture("res/Images/gameplayBackground.png");
+	basicBackground = LoadTexture("res/Images/basicBackground.png");
 
 	blueCar = LoadTexture("res/Images/blueCar.png");
 	yellowCar = LoadTexture("res/Images/yellowCar.png");
@@ -70,6 +71,11 @@ Font AssetsImporter::getFont()
 Texture AssetsImporter::getBackgroundGameplay()
 {
 	return backgroundGameplay;
+}
+
+Texture AssetsImporter::getBasicBackground()
+{
+	return basicBackground;
 }
 
 Texture AssetsImporter::getBlueCar()

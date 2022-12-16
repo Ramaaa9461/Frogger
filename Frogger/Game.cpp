@@ -16,10 +16,10 @@ void Game::initGame()
 {
 	AI = AssetsImporter::getAssetsImporter();
 
-	background = AI->getBackgroundGameplay();				//LoadTexture("res/Images/gameplayBackground.png");
-	victoryFrogTexture = AI->getVictoryFrog();				// LoadTexture("res/Images/CollectedFrog.png");
+	background = AI->getBackgroundGameplay();				
+	victoryFrogTexture = AI->getVictoryFrog();				
 	font = AssetsImporter::getAssetsImporter()->getFont();
-	gameplayMusic = AI->getGameplayMusic();					//LoadMusicStream("res/Music/gameplayMusic.wav");
+	gameplayMusic = AI->getGameplayMusic();					
 	PlayMusicStream(gameplayMusic);
 
 	player = new Player();
