@@ -23,7 +23,6 @@ class GameManager
 	Pause* pause;
 	EndGame* endGame;
 
-
 	void init();
 
 public:

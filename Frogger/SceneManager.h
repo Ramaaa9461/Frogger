@@ -10,6 +10,7 @@ private:
 	Scene scene = Scene::ENDGAME;
 	static SceneManager* sceneManager;
 	bool playerHaveWon;
+	bool resetValues;
 
 public:
 	~SceneManager();
@@ -24,5 +25,7 @@ public:
 	 void setPlayerHaveWon(bool haveWon);
 	 bool getPlayerHaveWon();
 
+	 void setResetValues(bool reset);
+	 bool getResetValues();
 };
 

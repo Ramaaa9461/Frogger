@@ -24,10 +24,11 @@ void Game::initGame()
 
 	player = new Player();
 	
-
 	createVictoriesZones();
 	createCars();
 	createTrunks(4);
+
+	resetValues();
 }
 
 void Game::updateGame()
@@ -105,6 +106,13 @@ void Game::drawGame()
 	}
 
 	player->draw();
+}
+
+void Game::resetValues()
+{
+	player->goToInitialPosition();
+	player->setLife(5);
+	player->setFrogPlaced(5);
 }
 
 void Game::Input()

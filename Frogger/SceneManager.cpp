@@ -27,6 +27,7 @@ Scene SceneManager::getCurrentScene()
 
 void SceneManager::setCurrentScene(Scene scene)
 {
+	resetValues = true;
 	this->scene = scene;
 }
 
@@ -38,6 +39,16 @@ void SceneManager::setPlayerHaveWon(bool haveWon)
 bool SceneManager::getPlayerHaveWon()
 {
 	return playerHaveWon;
+}
+
+void SceneManager::setResetValues(bool reset)
+{
+	resetValues = reset;
+}
+
+bool SceneManager::getResetValues()
+{
+	return resetValues;
 }
 
 

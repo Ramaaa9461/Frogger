@@ -35,6 +35,9 @@ public:
 	int getFrogPlaced();
 	void addFrogPlaced();
 
+	void setLife(int lifes);
+	void setFrogPlaced(int frogPlaced);
+
 	void draw();
 	Rectangle getBoxCollider();
 

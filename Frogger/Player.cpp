@@ -103,6 +103,16 @@ void Player::addFrogPlaced()
 	frogPlaced++;
 }
 
+void Player::setLife(int lifes)
+{
+	this->lifes = lifes;
+}
+
+void Player::setFrogPlaced(int frogPlaced)
+{
+	this->frogPlaced = frogPlaced;
+}
+
 Rectangle Player::getBoxCollider()
 {
 	return boxCollider;

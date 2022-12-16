@@ -16,7 +16,7 @@ private:
 
 	const char* text;
 
-	bool playerHaveWon = false;
+	void setButtons(Rectangle& rectangle, int sizeX, int sizeY, int difWidth, int difHeight);
 
 public:
 
@@ -25,6 +25,5 @@ public:
 	void draw();
 
 	void resetValues();
-	void setButtons(Rectangle& rectangle, int sizeX, int sizeY, int difWidth, int difHeight);
 };
 

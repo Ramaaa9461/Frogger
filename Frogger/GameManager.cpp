@@ -59,19 +59,29 @@ void GameManager::run()
 
 			break;
 		case Scene::CREDITS:
-			
+
 			credits->updateCredits();
 			credits->drawCredits();
-			
+
 			break;
 		case Scene::ENDGAME:
 
+			if (sceneManager->getResetValues())
+			{
+				endGame->resetValues();
+				sceneManager->setResetValues(false);
+			}
 			endGame->update();
 			endGame->draw();
 
 			break;
 		case Scene::GAME:
 
+			if (sceneManager->getResetValues())
+			{
+				game->resetValues();
+				sceneManager->setResetValues(false);
+			}
 			game->updateGame();
 			game->drawGame();
 

@@ -17,7 +17,6 @@ void EndGame::initEndGame()
 
 void EndGame::update()
 {
-	resetValues();
 
 	if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 	{
@@ -38,7 +37,7 @@ void EndGame::draw()
 
 	int fontSize = 30;
 
-	DrawTextEx(font, "Frogger", { (float)GetScreenWidth() / 2 - MeasureText("Frogge", 60) / 2,  200}, 60, 3.0f, YELLOW);
+	DrawTextEx(font, "Frogger", { (float)GetScreenWidth() / 2 - MeasureText("Frogge", fontSize * 2) / 2,  200}, fontSize * 2, 3.0f, YELLOW);
 
 	DrawTextEx(font, text, { (float)GetScreenWidth() / 2 - MeasureText(text, fontSize) / 2,  350}, fontSize, 1.0f, YELLOW);
 

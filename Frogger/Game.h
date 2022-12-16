@@ -45,6 +45,7 @@ public:
 	void initGame();
 	void updateGame();
 	void drawGame();
-
+	
+	void resetValues();
 };
 
