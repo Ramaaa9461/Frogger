@@ -9,7 +9,11 @@ Game::Game() {}
 Game::~Game()
 {
 	delete player;
-	delete[] obstacles;
+
+	for (int i = 0; i < size; i++)
+	{
+		delete obstacles[i];
+	}
 }
 
 void Game::initGame()

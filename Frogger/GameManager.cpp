@@ -33,6 +33,7 @@ GameManager::~GameManager()
 
 void GameManager::run()
 {
+	bool inGame = true;
 	InitWindow(800, 720, "Frogger");
 	SetTargetFPS(60);
 	InitAudioDevice();
@@ -43,7 +44,7 @@ void GameManager::run()
 	menuMusic = assetsImporter->getMenuMusic();
 	PlayMusicStream(menuMusic);
 
-	while (!WindowShouldClose())
+	while (!WindowShouldClose() && inGame)
 	{
 		BeginDrawing();
 		ClearBackground(BLACK);
@@ -106,6 +107,7 @@ void GameManager::run()
 			break;
 		case Scene::EXIT:
 			//Terminar el juego
+			inGame = false;
 
 			break;
 		}
