@@ -110,6 +110,8 @@ void Game::drawGame()
 
 void Game::resetValues()
 {
+	PlayMusicStream(gameplayMusic);
+
 	player->goToInitialPosition();
 	player->setLife(5);
 	player->setFrogPlaced(5);
