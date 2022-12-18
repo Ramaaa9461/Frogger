@@ -27,7 +27,13 @@ void Credits::drawCredits()
 {
 	DrawTexture(background, 0, 0, WHITE);
 
-	int fontSize = 30;
+	int fontSize = 15;
+
+	float y = 250;
+
+	DrawTextEx(font, "FROGGER GAME SPRITES: http://www.classicgaming.cc/classics/frogger/graphics" , { 0, y }, fontSize, 2.0f, RED);
+
+
 
 	DrawRectangleRec(button1, ORANGE);
 	DrawTextEx(font, "Menu", { button1.x + button1.width / 2 - MeasureText("Menu", fontSize) / 2, button1.y + button1.height / 2 - fontSize / 2 }, fontSize, 2.0f, RED);
