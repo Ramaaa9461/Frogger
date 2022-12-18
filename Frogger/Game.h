@@ -47,5 +47,6 @@ public:
 	void drawGame();
 	
 	void resetValues();
+	Music& getGameplayMusic();
 };
 

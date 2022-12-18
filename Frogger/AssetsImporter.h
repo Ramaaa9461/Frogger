@@ -15,6 +15,7 @@ private:
 	Texture backgroundGameplay;
 	Texture basicBackground;
 	Texture rulesBackground;
+	Texture pauseBackground;
 	Texture creditsBackground;
 
 	Texture blueCar;
@@ -45,8 +46,9 @@ public:
 
 	Texture getBackgroundGameplay();
 	Texture getBasicBackground();
-	Texture getCreditsBackground();
 	Texture getRulesBackground();
+	Texture getPauseBackground();
+	Texture getCreditsBackground();
 
 	Texture getBlueCar();
 	Texture getYellowCar();

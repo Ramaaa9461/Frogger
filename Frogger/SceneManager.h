@@ -1,6 +1,6 @@
 #pragma once
 
-enum class Scene { MENU = 1, GAME, RULES, CREDITS, EXIT, ENDGAME };
+enum class Scene { MENU = 1, GAME, RULES, CREDITS, PAUSE , ENDGAME, EXIT };
 
 class SceneManager
 {
@@ -20,6 +20,7 @@ public:
 	Scene getCurrentScene();
 
 	void setCurrentScene(Scene _scene);
+	void setCurrentScene(Scene _scene, bool resetValues);
 
 
 	 void setPlayerHaveWon(bool haveWon);

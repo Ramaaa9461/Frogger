@@ -2,6 +2,8 @@
 
 #include "AssetsImporter.h"
 
+#include <iostream>
+
 GameManager::GameManager()
 {
 	sceneManager = SceneManager::getSceneManager();
@@ -39,7 +41,7 @@ void GameManager::run()
 
 	assetsImporter = AssetsImporter::getAssetsImporter();
 	menuMusic = assetsImporter->getMenuMusic();
-		PlayMusicStream(menuMusic);
+	PlayMusicStream(menuMusic);
 
 	while (!WindowShouldClose())
 	{
@@ -52,6 +54,10 @@ void GameManager::run()
 		{
 		case Scene::MENU:
 
+			if (sceneManager->getResetValues())
+			{
+				PlayMusicStream(menuMusic);
+			}
 			menu->updateMenu();
 			menu->drawMenu();
 
@@ -92,6 +98,12 @@ void GameManager::run()
 			game->drawGame();
 
 			break;
+		case Scene::PAUSE:
+
+			pause->updatePause(game->getGameplayMusic());
+			pause->drawPause();
+
+			break;
 		case Scene::EXIT:
 			//Terminar el juego
 
@@ -117,6 +129,6 @@ void GameManager::init()
 	rules->initRules();
 	credits->initCredits();
 	endGame->initEndGame();
+	pause->initPause();
 
-	//pause->initPause();
 }

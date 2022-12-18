@@ -28,6 +28,7 @@ void AssetsImporter::initAssetsImporter()
 	backgroundGameplay = LoadTexture("res/Images/gameplayBackground.png");
 	basicBackground = LoadTexture("res/Images/basicBackground.png");
 	rulesBackground = LoadTexture("res/Images/rulesBackground.png");
+	pauseBackground = LoadTexture("res/Images/pauseBackground.png");
 	creditsBackground = LoadTexture("res/Images/creditsBackground.png");
 
 	blueCar = LoadTexture("res/Images/blueCar.png");
@@ -95,6 +96,11 @@ Texture AssetsImporter::getCreditsBackground()
 Texture AssetsImporter::getRulesBackground()
 {
 	return rulesBackground;
+}
+
+Texture AssetsImporter::getPauseBackground()
+{
+	return pauseBackground;
 }
 
 Texture AssetsImporter::getBlueCar()

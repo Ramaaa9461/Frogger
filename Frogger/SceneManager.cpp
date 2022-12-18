@@ -25,10 +25,16 @@ Scene SceneManager::getCurrentScene()
 	return scene;
 }
 
-void SceneManager::setCurrentScene(Scene scene)
+void SceneManager::setCurrentScene(Scene _scene)
 {
 	resetValues = true;
-	this->scene = scene;
+	scene = _scene;
+}
+
+void SceneManager::setCurrentScene(Scene _scene, bool resetValues)
+{
+	this->resetValues = resetValues;
+	scene = _scene;
 }
 
 void SceneManager::setPlayerHaveWon(bool haveWon)

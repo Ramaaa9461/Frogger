@@ -115,6 +115,11 @@ void Game::resetValues()
 	player->setFrogPlaced(5);
 }
 
+Music& Game::getGameplayMusic()
+{
+	return gameplayMusic;
+}
+
 void Game::Input()
 {
 	if (IsKeyPressed(KEY_W))
@@ -135,6 +140,11 @@ void Game::Input()
 	if (IsKeyPressed(KEY_D))
 	{
 		player->moveRight();
+	}
+
+	if (IsKeyPressed(KEY_P))
+	{
+		SceneManager::getSceneManager()->setCurrentScene(Scene::PAUSE, false);
 	}
 }
 
