@@ -27,16 +27,21 @@ void AssetsImporter::initAssetsImporter()
 
 	backgroundGameplay = LoadTexture("res/Images/gameplayBackground.png");
 	basicBackground = LoadTexture("res/Images/basicBackground.png");
+	rulesBackground = LoadTexture("res/Images/rulesBackground.png");
+	creditsBackground = LoadTexture("res/Images/creditsBackground.png");
 
 	blueCar = LoadTexture("res/Images/blueCar.png");
 	yellowCar = LoadTexture("res/Images/yellowCar.png");
 	greenCar = LoadTexture("res/Images/greenCar.png");
 	truck = LoadTexture("res/Images/truck.png");
+	fireTruck = LoadTexture("res/Images/fireTruck.png");
+
 	trunk = LoadTexture("res/Images/trunk.png");
 	frog = LoadTexture("res/Images/frog.png");
 	victoryFrog = LoadTexture("res/Images/CollectedFrog.png");
 
 	gameplayMusic = LoadMusicStream("res/Music/gameplayMusic.wav");
+	menuMusic = LoadMusicStream("res/Music/menuMusic.wav");
 
 	jumpSound = LoadSound("res/Sfx/jump.ogg");
 }
@@ -46,11 +51,15 @@ void AssetsImporter::deInitAssetImporter()
 	UnloadFont(font);
 
 	UnloadTexture(backgroundGameplay);
+	UnloadTexture(basicBackground);
+	UnloadTexture(rulesBackground);
 
 	UnloadTexture(blueCar);
 	UnloadTexture(yellowCar);
 	UnloadTexture(greenCar);
 	UnloadTexture(truck);
+	UnloadTexture(fireTruck);
+	
 	UnloadTexture(trunk);
 	UnloadTexture(frog);
 	UnloadTexture(victoryFrog);
@@ -78,6 +87,16 @@ Texture AssetsImporter::getBasicBackground()
 	return basicBackground;
 }
 
+Texture AssetsImporter::getCreditsBackground()
+{
+	return creditsBackground;
+}
+
+Texture AssetsImporter::getRulesBackground()
+{
+	return rulesBackground;
+}
+
 Texture AssetsImporter::getBlueCar()
 {
 	return blueCar;
@@ -96,6 +115,11 @@ Texture AssetsImporter::getGreenCar()
 Texture AssetsImporter::getTruck()
 {
 	return truck;
+}
+
+Texture AssetsImporter::getFireTruck()
+{
+	return fireTruck;
 }
 
 Texture AssetsImporter::getTrunk()

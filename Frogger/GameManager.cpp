@@ -13,6 +13,7 @@ GameManager::GameManager()
 	pause = new Pause;
 	endGame = new EndGame();
 
+
 }
 
 GameManager::~GameManager()
@@ -37,12 +38,15 @@ void GameManager::run()
 	init();
 
 	assetsImporter = AssetsImporter::getAssetsImporter();
-
+	menuMusic = assetsImporter->getMenuMusic();
+		PlayMusicStream(menuMusic);
 
 	while (!WindowShouldClose())
 	{
 		BeginDrawing();
 		ClearBackground(BLACK);
+
+		UpdateMusicStream(menuMusic);
 
 		switch (sceneManager->getCurrentScene())
 		{
@@ -68,6 +72,7 @@ void GameManager::run()
 
 			if (sceneManager->getResetValues())
 			{
+				PlayMusicStream(menuMusic);
 				endGame->resetValues();
 				sceneManager->setResetValues(false);
 			}
@@ -79,6 +84,7 @@ void GameManager::run()
 
 			if (sceneManager->getResetValues())
 			{
+				StopMusicStream(menuMusic);
 				game->resetValues();
 				sceneManager->setResetValues(false);
 			}
@@ -87,6 +93,8 @@ void GameManager::run()
 
 			break;
 		case Scene::EXIT:
+			//Terminar el juego
+
 			break;
 		}
 
@@ -104,7 +112,11 @@ void GameManager::run()
 
 void GameManager::init()
 {
+	menu->initMenu();
 	game->initGame();
+	rules->initRules();
+	credits->initCredits();
 	endGame->initEndGame();
+
 	//pause->initPause();
 }

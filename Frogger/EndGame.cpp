@@ -37,8 +37,6 @@ void EndGame::draw()
 
 	int fontSize = 30;
 
-	DrawTextEx(font, "Frogger", { (float)GetScreenWidth() / 2 - MeasureText("Frogge", fontSize * 2) / 2,  200}, fontSize * 2, 3.0f, YELLOW);
-
 	DrawTextEx(font, text, { (float)GetScreenWidth() / 2 - MeasureText(text, fontSize) / 2,  350}, fontSize, 1.0f, YELLOW);
 
 	DrawRectangleRec(button1, ORANGE);
@@ -61,8 +59,8 @@ void EndGame::resetValues()
 
 void EndGame::setButtons(Rectangle& rectangle, int sizeX, int sizeY, int difWidth, int difHeight)
 {
-	rectangle.height = sizeY;
 	rectangle.width = sizeX;
+	rectangle.height = sizeY;
 	rectangle.x = (GetScreenWidth() / 2) - (sizeX / 2) + difWidth;
 	rectangle.y = (GetScreenHeight() / 2) - (sizeY / 2) + difHeight;
 }

@@ -210,7 +210,7 @@ void Game::createTrunks(int initalIndex)
 
 void Game::createCars()
 {
-	obstacles[0] = new Cars(AI->getBlueCar(), 13, 0, 5);
+	obstacles[0] = new Cars(AI->getFireTruck(), 13, 0, 5);
 	obstacles[1] = new Cars(AI->getGreenCar(), 12, 1, 7);
 	obstacles[2] = new Cars(AI->getYellowCar(), 11, 0, 4);
 	obstacles[3] = new Cars(AI->getTruck(), 10, 1, 10);

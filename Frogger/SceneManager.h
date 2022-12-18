@@ -7,7 +7,7 @@ class SceneManager
 private:
 
 	SceneManager();
-	Scene scene = Scene::ENDGAME;
+	Scene scene = Scene::MENU;
 	static SceneManager* sceneManager;
 	bool playerHaveWon;
 	bool resetValues;

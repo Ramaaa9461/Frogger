@@ -23,6 +23,8 @@ class GameManager
 	Pause* pause;
 	EndGame* endGame;
 
+	Music menuMusic;
+
 	void init();
 
 public:

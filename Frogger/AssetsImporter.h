@@ -14,11 +14,15 @@ private:
 
 	Texture backgroundGameplay;
 	Texture basicBackground;
+	Texture rulesBackground;
+	Texture creditsBackground;
 
 	Texture blueCar;
 	Texture yellowCar;
 	Texture greenCar;
 	Texture truck;
+	Texture fireTruck;
+
 	Texture trunk;
 	Texture frog;
 	Texture victoryFrog;
@@ -41,10 +45,14 @@ public:
 
 	Texture getBackgroundGameplay();
 	Texture getBasicBackground();
+	Texture getCreditsBackground();
+	Texture getRulesBackground();
+
 	Texture getBlueCar();
 	Texture getYellowCar();
 	Texture getGreenCar();
 	Texture getTruck();
+	Texture getFireTruck();
 	Texture getTrunk();
 	Texture getFrog();
 	Texture getVictoryFrog();
