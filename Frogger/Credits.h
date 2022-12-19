@@ -11,6 +11,7 @@ private:
 
 	AssetsImporter* AI;
 	Texture background;
+	Sound clickSound;
 	Font font;
 
 	Rectangle button1;

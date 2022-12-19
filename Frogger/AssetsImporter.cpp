@@ -45,6 +45,7 @@ void AssetsImporter::initAssetsImporter()
 	menuMusic = LoadMusicStream("res/Music/menuMusic.wav");
 
 	jumpSound = LoadSound("res/Sfx/jump.wav");
+	clickSound = LoadSound("res/Sfx/clickSound.ogg");
 }
 
 void AssetsImporter::deInitAssetImporter()
@@ -156,6 +157,11 @@ Music AssetsImporter::getMenuMusic()
 Sound AssetsImporter::getJumpSound()
 {
 	return jumpSound;
+}
+
+Sound AssetsImporter::getClickSound()
+{
+	return clickSound;
 }
 
 

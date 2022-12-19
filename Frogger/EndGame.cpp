@@ -5,6 +5,7 @@ void EndGame::initEndGame()
 {
 	AI = AssetsImporter::getAssetsImporter();
 	background = AI->getBasicBackground();
+	clickSound = AI->getClickSound();
 	font = AI->getFont();
 
 	int sizeX = 250;
@@ -23,10 +24,12 @@ void EndGame::update()
 		if (CheckCollisionPointRec(GetMousePosition(), button1))
 		{
 			SceneManager::getSceneManager()->setCurrentScene(Scene::GAME);
+			PlaySound(clickSound);
 		}
 		else if (CheckCollisionPointRec(GetMousePosition(), button2))
 		{
 			SceneManager::getSceneManager()->setCurrentScene(Scene::MENU);
+			PlaySound(clickSound);
 		}
 	}
 }

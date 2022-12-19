@@ -13,6 +13,7 @@ void Menu::initMenu()
 {
 	AI = AssetsImporter::getAssetsImporter();
 	background = AI->getBasicBackground();
+	clickSound = AI->getClickSound();
 	font = AI->getFont();
 
 	int sizeX = 150;
@@ -30,18 +31,22 @@ void Menu::updateMenu()
 		if (CheckCollisionPointRec(GetMousePosition(), button1))
 		{
 			SceneManager::getSceneManager()->setCurrentScene(Scene::GAME);
+			PlaySound(clickSound);
 		}
 		else if (CheckCollisionPointRec(GetMousePosition(), button2))
 		{
 			SceneManager::getSceneManager()->setCurrentScene(Scene::RULES);
+			PlaySound(clickSound);
 		}
 		else if (CheckCollisionPointRec(GetMousePosition(), button3))
 		{
 			SceneManager::getSceneManager()->setCurrentScene(Scene::CREDITS);
+			PlaySound(clickSound);
 		}
 		else if (CheckCollisionPointRec(GetMousePosition(), button4))
 		{
 			SceneManager::getSceneManager()->setCurrentScene(Scene::EXIT);
+			PlaySound(clickSound);
 		}
 	}
 }

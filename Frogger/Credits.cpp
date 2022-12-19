@@ -5,6 +5,7 @@ void Credits::initCredits()
 {
 	AI = AssetsImporter::getAssetsImporter();
 	background = AI->getCreditsBackground();
+	clickSound = AI->getClickSound();
 	font = AI->getFont();
 
 	int sizeX = 150;
@@ -19,6 +20,7 @@ void Credits::updateCredits()
 		if (CheckCollisionPointRec(GetMousePosition(), button1))
 		{
 			SceneManager::getSceneManager()->setCurrentScene(Scene::MENU);
+			PlaySound(clickSound);
 		}
 	}
 }
@@ -48,6 +50,8 @@ void Credits::drawCredits()
 	DrawTextEx(font, "SFX", { (float)GetScreenWidth() / 2 - MeasureText("SFX", fontSize * 2.0f) / 2, y }, fontSize * 2.0f, 5.0f, YELLOW);
 	y += 30;
 	DrawTextEx(font, "SMILE JUMP EFFECT, KobatoGames: https://opengameart.org/content/slime-jump-effect", { 0, y }, fontSize, 2.0f, SKYBLUE);
+	y += 20;
+	DrawTextEx(font, "CRASH COLLISION, qubodup: https://opengameart.org/content/crash-collision", { 0, y }, fontSize, 2.0f, SKYBLUE);
 	y += 20;
 
 	DrawTextEx(font, "FONTS", { (float)GetScreenWidth() / 2 - MeasureText("FONTS", fontSize * 2.0f) / 2, y }, fontSize * 2.0f, 5.0f, YELLOW);

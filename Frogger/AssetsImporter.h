@@ -32,7 +32,7 @@ private:
 	Music   menuMusic;
 
 	Sound   jumpSound;
-
+	Sound clickSound;
 
 public:
 
@@ -63,6 +63,7 @@ public:
 	Music getMenuMusic();
 
 	Sound getJumpSound();
+	Sound getClickSound();
 
 
 };

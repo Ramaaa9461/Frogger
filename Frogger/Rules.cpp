@@ -6,6 +6,7 @@ void Rules::initRules()
 {
 	AI = AssetsImporter::getAssetsImporter();
 	background = AI->getRulesBackground();
+	clickSound = AI->getClickSound();
 	font = AI->getFont();
 
 	int sizeX = 150;
@@ -21,6 +22,7 @@ void Rules::updateRules()
 		if (CheckCollisionPointRec(GetMousePosition(), button1))
 		{
 			SceneManager::getSceneManager()->setCurrentScene(Scene::MENU);
+			PlaySound(clickSound);
 		}
 	}
 }

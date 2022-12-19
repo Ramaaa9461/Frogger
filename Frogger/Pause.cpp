@@ -6,6 +6,7 @@ void Pause::initPause()
 {
 	AI = AssetsImporter::getAssetsImporter();
 	background = AI->getPauseBackground();
+	clickSound = AI->getClickSound();
 	font = AI->getFont();
 
 	int sizeX = 250;
@@ -23,11 +24,13 @@ void Pause::updatePause(Music& gameplayMusic)
 		if (CheckCollisionPointRec(GetMousePosition(), button1))
 		{
 			SceneManager::getSceneManager()->setCurrentScene(Scene::GAME, false);
+			PlaySound(clickSound);
 		}
 		else if (CheckCollisionPointRec(GetMousePosition(), button2))
 		{
 			StopMusicStream(gameplayMusic);
 			SceneManager::getSceneManager()->setCurrentScene(Scene::MENU);
+			PlaySound(clickSound);
 		}
 	}
 
