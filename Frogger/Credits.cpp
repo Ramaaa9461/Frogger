@@ -22,7 +22,6 @@ void Credits::updateCredits()
 		}
 	}
 }
-
 void Credits::drawCredits()
 {
 	DrawTexture(background, 0, 0, WHITE);
@@ -31,7 +30,30 @@ void Credits::drawCredits()
 
 	float y = 250;
 
-	DrawTextEx(font, "FROGGER GAME SPRITES: http://www.classicgaming.cc/classics/frogger/graphics" , { 0, y }, fontSize, 2.0f, RED);
+	DrawTextEx(font, "CREATE BY RAMIRO GUZMAN", { (float)GetScreenWidth() / 2 - MeasureText("CREATE BY RAMIRO GUZMAN", fontSize * 2.0f) / 2, y }, fontSize * 2.0f, 5.0f, YELLOW);
+	y += 50;
+	DrawTextEx(font, "GUI BACKGROUNDS BY LUCAS PICH", { (float)GetScreenWidth() / 2 - MeasureText("GUI BACKGROUNDS BY LUCAS PICH", fontSize * 2.0f) / 2, y }, fontSize * 2.0f, 5.0f, YELLOW);
+	y += 50;
+	
+	DrawTextEx(font, "ART", { (float)GetScreenWidth() / 2 - MeasureText("ART", fontSize * 2.0f) / 2, y }, fontSize * 2.0f, 5.0f, YELLOW);
+	y += 30;
+	DrawTextEx(font, "FROGGER GAME SPRITES, herrrattentod: http://www.classicgaming.cc/classics/frogger/graphics", { 0, y }, fontSize, 2.0f, SKYBLUE);
+	y += 20;
+	
+	DrawTextEx(font, "MUSIC", { (float)GetScreenWidth() / 2 - MeasureText("MUSIC", fontSize * 2.0f) / 2, y }, fontSize * 2.0f, 5.0f, YELLOW);
+	y += 30;
+	DrawTextEx(font, "GAMEPLAY MUSIC, tcarisland: https://opengameart.org/content/menu-1", { 0, y }, fontSize, 2.0f, SKYBLUE);
+	y += 20;
+	
+	DrawTextEx(font, "SFX", { (float)GetScreenWidth() / 2 - MeasureText("SFX", fontSize * 2.0f) / 2, y }, fontSize * 2.0f, 5.0f, YELLOW);
+	y += 30;
+	DrawTextEx(font, "SMILE JUMP EFFECT, KobatoGames: https://opengameart.org/content/slime-jump-effect", { 0, y }, fontSize, 2.0f, SKYBLUE);
+	y += 20;
+
+	DrawTextEx(font, "FONTS", { (float)GetScreenWidth() / 2 - MeasureText("FONTS", fontSize * 2.0f) / 2, y }, fontSize * 2.0f, 5.0f, YELLOW);
+	y += 30;
+	DrawTextEx(font, "JUNGLE ADVENTURER, Tokokoo: https://www.1001fonts.com/jungle-adventurer-font.html", { 0, y }, fontSize, 2.0f, SKYBLUE);
+	y += 20;
 
 
 

@@ -44,7 +44,7 @@ void AssetsImporter::initAssetsImporter()
 	gameplayMusic = LoadMusicStream("res/Music/gameplayMusic.wav");
 	menuMusic = LoadMusicStream("res/Music/menuMusic.wav");
 
-	jumpSound = LoadSound("res/Sfx/jump.ogg");
+	jumpSound = LoadSound("res/Sfx/jump.wav");
 }
 
 void AssetsImporter::deInitAssetImporter()
