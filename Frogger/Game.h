@@ -31,6 +31,10 @@ private:
 	Music gameplayMusic;
 	Font font;
 
+	Rectangle pauseButton;
+	Sound clickSound;
+	int fontSize = 20;
+
 	void Input();
 	void createVictoriesZones();
 	void createTrunks(int initalIndex);

@@ -20,19 +20,24 @@ void Game::initGame()
 {
 	AI = AssetsImporter::getAssetsImporter();
 
-	background = AI->getBackgroundGameplay();				
-	victoryFrogTexture = AI->getVictoryFrog();				
+	background = AI->getBackgroundGameplay();
+	victoryFrogTexture = AI->getVictoryFrog();
 	font = AssetsImporter::getAssetsImporter()->getFont();
-	gameplayMusic = AI->getGameplayMusic();					
+	gameplayMusic = AI->getGameplayMusic();
 	PlayMusicStream(gameplayMusic);
 
 	player = new Player();
-	
+
 	createVictoriesZones();
 	createCars();
 	createTrunks(4);
 
 	resetValues();
+
+	pauseButton.height = 30;
+	pauseButton.width = 30;
+	pauseButton.y = 0;
+	pauseButton.x = GetScreenWidth() - pauseButton.width;
 }
 
 void Game::updateGame()
@@ -52,7 +57,7 @@ void Game::updateGame()
 		player->goToInitialPosition();
 	}
 
-			UnlockedVictoriesZonesCount = 0;
+	UnlockedVictoriesZonesCount = 0;
 	for (int i = 0; i < victoryZonesCount; i++)
 	{
 		if (CheckCollisionRecs(victoryZones[i], player->getBoxCollider()))
@@ -88,6 +93,15 @@ void Game::updateGame()
 		SceneManager::getSceneManager()->setPlayerHaveWon(false);
 		SceneManager::getSceneManager()->setCurrentScene(Scene::ENDGAME);
 	}
+
+	if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+	{
+		if (CheckCollisionPointRec(GetMousePosition(), pauseButton))
+		{
+			SceneManager::getSceneManager()->setCurrentScene(Scene::PAUSE);
+			PlaySound(clickSound);
+		}
+	}
 }
 
 void Game::drawGame()
@@ -109,6 +123,9 @@ void Game::drawGame()
 		obstacles[i]->draw();
 	}
 
+	DrawRectangleRec(pauseButton, ORANGE);
+	DrawTextEx(font, "||", { pauseButton.x + pauseButton.width / 2 - MeasureText("||", fontSize) , pauseButton.y + pauseButton.height / 2 - fontSize / 2 }, fontSize, 2.0f, WHITE);
+
 	player->draw();
 }
 
@@ -118,7 +135,12 @@ void Game::resetValues()
 
 	player->goToInitialPosition();
 	player->setLife(5);
-	player->setFrogPlaced(5);
+	player->setFrogPlaced(0);
+
+	for (int i = 0; i < victoryZonesCount; i++)
+	{
+		unlockedVictoriesZones[i] = false;
+	}
 }
 
 Music& Game::getGameplayMusic()
@@ -146,11 +168,6 @@ void Game::Input()
 	if (IsKeyPressed(KEY_D))
 	{
 		player->moveRight();
-	}
-
-	if (IsKeyPressed(KEY_P))
-	{
-		SceneManager::getSceneManager()->setCurrentScene(Scene::PAUSE, false);
 	}
 }
 
@@ -191,7 +208,7 @@ void Game::drawTexts()
 void Game::createTrunks(int initalIndex)
 {
 	int index = initalIndex;
-	
+
 
 	for (int i = 0; i < trunksPerRow; i++)
 	{
