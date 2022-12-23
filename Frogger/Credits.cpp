@@ -46,12 +46,16 @@ void Credits::drawCredits()
 	y += 30;
 	DrawTextEx(font, "GAMEPLAY MUSIC, tcarisland: https://opengameart.org/content/menu-1", { 0, y }, fontSize, 2.0f, SKYBLUE);
 	y += 20;
+	DrawTextEx(font, "MENU MUSIC, mrpoly: https://opengameart.org/content/menu-music", { 0, y }, fontSize, 2.0f, SKYBLUE);
+	y += 20;
 	
 	DrawTextEx(font, "SFX", { (float)GetScreenWidth() / 2 - MeasureText("SFX", fontSize * 2.0f) / 2, y }, fontSize * 2.0f, 5.0f, YELLOW);
 	y += 30;
 	DrawTextEx(font, "SMILE JUMP EFFECT, KobatoGames: https://opengameart.org/content/slime-jump-effect", { 0, y }, fontSize, 2.0f, SKYBLUE);
 	y += 20;
 	DrawTextEx(font, "CRASH COLLISION, qubodup: https://opengameart.org/content/crash-collision", { 0, y }, fontSize, 2.0f, SKYBLUE);
+	y += 20;
+	DrawTextEx(font, "KILL SOUND, remaxim: https://opengameart.org/content/bad-sound-2", { 0, y }, fontSize, 2.0f, SKYBLUE);
 	y += 20;
 
 	DrawTextEx(font, "FONTS", { (float)GetScreenWidth() / 2 - MeasureText("FONTS", fontSize * 2.0f) / 2, y }, fontSize * 2.0f, 5.0f, YELLOW);
