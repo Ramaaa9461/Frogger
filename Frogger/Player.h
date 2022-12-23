@@ -12,6 +12,8 @@ private:
 	Rectangle boxCollider;
 	Texture2D texture;
 	Sound jump;
+	Sound lose;
+
 	int lifes = 5;
 	int frogPlaced = 0;
 

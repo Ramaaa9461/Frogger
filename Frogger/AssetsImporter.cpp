@@ -46,6 +46,7 @@ void AssetsImporter::initAssetsImporter()
 
 	jumpSound = LoadSound("res/Sfx/jump.wav");
 	clickSound = LoadSound("res/Sfx/clickSound.ogg");
+	loseSound = LoadSound("res/Sfx/loseSound.wav");
 }
 
 void AssetsImporter::deInitAssetImporter()
@@ -70,6 +71,8 @@ void AssetsImporter::deInitAssetImporter()
 	UnloadMusicStream(menuMusic);
 
 	UnloadSound(jumpSound);
+	UnloadSound(clickSound);
+	UnloadSound(loseSound);
 
 
 }
@@ -162,6 +165,11 @@ Sound AssetsImporter::getJumpSound()
 Sound AssetsImporter::getClickSound()
 {
 	return clickSound;
+}
+
+Sound AssetsImporter::getLoseSound()
+{
+	return loseSound;
 }
 
 

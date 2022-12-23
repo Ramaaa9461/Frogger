@@ -33,6 +33,7 @@ private:
 
 	Sound   jumpSound;
 	Sound clickSound;
+	Sound loseSound;
 
 public:
 
@@ -64,6 +65,7 @@ public:
 
 	Sound getJumpSound();
 	Sound getClickSound();
+	Sound getLoseSound();
 
 
 };

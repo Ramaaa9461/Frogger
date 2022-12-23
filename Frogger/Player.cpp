@@ -7,6 +7,7 @@ Player::Player()
 	texture = AssetsImporter::getAssetsImporter()->getFrog();
 	speed = GetScreenHeight() / 15; //Remplazar por la cantidad de columnas
 	jump = AssetsImporter::getAssetsImporter()->getJumpSound();
+	lose = AssetsImporter::getAssetsImporter()->getLoseSound();
 	SetSoundVolume(jump, 0.5f);
 
 	goToInitialPosition();
@@ -79,6 +80,7 @@ void Player::substractLife()
 	if (lifes > 0)
 	{
 		lifes--;
+		PlaySound(lose);
 	}
 }
 
