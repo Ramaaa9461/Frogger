@@ -28,11 +28,11 @@ void Cars::move()
 {
 	if (direction == 0)
 	{
-		position.x += speed;
+		position.x += speed * GetFrameTime();
 	}
 	else
 	{
-		position.x -= speed;
+		position.x -= speed * GetFrameTime();
 	}
 
 	if (position.x > GetScreenWidth() + boxCollider.width + 1 ||

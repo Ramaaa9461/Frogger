@@ -213,39 +213,39 @@ void Game::createTrunks(int initalIndex)
 	for (int i = 0; i < trunksPerRow; i++)
 	{
 		index++;
-		obstacles[index] = new Trunks(AI->getTrunk(), 6, 1, 10, (GetScreenWidth() / 3) * i);
+		obstacles[index] = new Trunks(AI->getTrunk(), 6, 1, 500, (GetScreenWidth() / 3) * i);
 	}
 
 	for (int i = 0; i < trunksPerRow; i++)
 	{
 		index++;
-		obstacles[index] = new Trunks(AI->getTrunk(), 5, 0, 8, (GetScreenWidth() / 3) * i);
+		obstacles[index] = new Trunks(AI->getTrunk(), 5, 0, 430, (GetScreenWidth() / 3) * i);
 	}
 
 	for (int i = 0; i < trunksPerRow; i++)
 	{
 		index++;
-		obstacles[index] = new Trunks(AI->getTrunk(), 4, 1, 9, (GetScreenWidth() / 3) * i);
+		obstacles[index] = new Trunks(AI->getTrunk(), 4, 1, 620, (GetScreenWidth() / 3) * i);
 	}
 
 	for (int i = 0; i < trunksPerRow; i++)
 	{
 		index++;
-		obstacles[index] = new Trunks(AI->getTrunk(), 3, 0, 5, (GetScreenWidth() / 3) * i);
+		obstacles[index] = new Trunks(AI->getTrunk(), 3, 0, 390, (GetScreenWidth() / 3) * i);
 	}
 
 	for (int i = 0; i < trunksPerRow; i++)
 	{
 		index++;
-		obstacles[index] = new Trunks(AI->getTrunk(), 2, 1, 11, (GetScreenWidth() / 3) * i);
+		obstacles[index] = new Trunks(AI->getTrunk(), 2, 1, 440, (GetScreenWidth() / 3) * i);
 	}
 }
 
 void Game::createCars()
 {
-	obstacles[0] = new Cars(AI->getFireTruck(), 13, 0, 5);
-	obstacles[1] = new Cars(AI->getGreenCar(), 12, 1, 7);
-	obstacles[2] = new Cars(AI->getYellowCar(), 11, 0, 4);
-	obstacles[3] = new Cars(AI->getTruck(), 10, 1, 10);
-	obstacles[4] = new Cars(AI->getBlueCar(), 9, 0, 15);
+	obstacles[0] = new Cars(AI->getFireTruck(), 13, 0, 700);
+	obstacles[1] = new Cars(AI->getGreenCar(), 12, 1 , 720);
+	obstacles[2] = new Cars(AI->getYellowCar(), 11, 0, 790);
+	obstacles[3] = new Cars(AI->getTruck(), 10, 1    , 750);
+	obstacles[4] = new Cars(AI->getBlueCar(), 9, 0   , 820);
 }

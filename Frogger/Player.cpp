@@ -70,7 +70,7 @@ void Player::moveLeft()
 
 void Player::addSpeed(int speed)
 {
-	position.x += speed;
+	position.x += speed * GetFrameTime();
 	boxCollider.x = position.x;
 }
 
